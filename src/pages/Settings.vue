@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-if="$root.isMobile" class="shadow-box mb-3">
-            <router-link to="/manage-status-page" class="nav-link">
+            <router-link to="/uptimer/manage-status-page" class="nav-link">
                 <font-awesome-icon icon="stream" /> {{ $t("Status Pages") }}
             </router-link>
-            <router-link to="/maintenance" class="nav-link">
+            <router-link to="/uptimer/maintenance" class="nav-link">
                 <font-awesome-icon icon="wrench" /> {{ $t("Maintenance") }}
             </router-link>
         </div>
@@ -19,7 +19,7 @@
                     <router-link
                         v-for="(item, key) in subMenus"
                         :key="key"
-                        :to="`/settings/${key}`"
+                        :to="`/uptimer/settings/${key}`"
                     >
                         <div class="menu-item">
                             {{ item.title }}

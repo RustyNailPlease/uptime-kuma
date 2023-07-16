@@ -22,7 +22,7 @@ export default {
         // There are only 2 cases that could come in here.
         // 1. Matched status Page domain name
         // 2. Vue Frontend Dev
-        let res = (await axios.get("/api/entry-page")).data;
+        let res = (await axios.get("/uptimer/api/entry-page")).data;
 
         if (res.type === "statusPageMatchedDomain") {
             this.statusPageSlug = res.statusPageSlug;
@@ -32,12 +32,12 @@ export default {
             const entryPage = res.entryPage;
 
             if (entryPage === "statusPage") {
-                this.$router.push("/status");
+                this.$router.push("/uptimer/status");
             } else {
-                this.$router.push("/dashboard");
+                this.$router.push("/uptimer/dashboard");
             }
         } else {
-            this.$router.push("/dashboard");
+            this.$router.push("/uptimer/dashboard");
         }
 
     },

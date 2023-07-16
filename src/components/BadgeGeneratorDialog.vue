@@ -239,7 +239,7 @@ export default {
             if (!this.monitor.id || !this.badge.type) {
                 return;
             }
-            let badgeURL = this.$root.baseURL + "/api/badge/" + this.monitor.id + "/" + this.badge.type;
+            let badgeURL = this.$root.baseURL + "/uptimer/api/badge/" + this.monitor.id + "/" + this.badge.type;
 
             let parameterList = {};
 

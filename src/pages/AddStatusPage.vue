@@ -59,7 +59,7 @@ export default {
                 this.processing = false;
 
                 if (res.ok) {
-                    location.href = "/status/" + this.slug + "?edit";
+                    location.href = "/uptimer/status/" + this.slug + "?edit";
                 } else {
 
                     if (res.msg.includes("UNIQUE constraint")) {

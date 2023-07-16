@@ -312,7 +312,7 @@ exports.genSecret = genSecret;
  * @returns Formatted relative path
  */
 function getMonitorRelativeURL(id) {
-    return "/dashboard/" + id;
+    return "/uptimer/dashboard/" + id;
 }
 exports.getMonitorRelativeURL = getMonitorRelativeURL;
 /**
@@ -321,7 +321,7 @@ exports.getMonitorRelativeURL = getMonitorRelativeURL;
  * @returns Formatted relative path
  */
 function getMaintenanceRelativeURL(id) {
-    return "/maintenance/" + id;
+    return "/uptimer/maintenance/" + id;
 }
 exports.getMaintenanceRelativeURL = getMaintenanceRelativeURL;
 /**

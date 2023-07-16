@@ -119,7 +119,7 @@
                 </span>
 
                 <!-- Uploader -->
-                <!--    url="/api/status-page/upload-logo" -->
+                <!--    url="/uptimer/api/status-page/upload-logo" -->
                 <ImageCropUpload
                     v-model="showImageCropUpload"
                     field="img"
@@ -144,7 +144,7 @@
                         {{ $t("Edit Status Page") }}
                     </button>
 
-                    <a href="/manage-status-page" class="btn btn-info">
+                    <a href="/uptimer/manage-status-page" class="btn btn-info">
                         <font-awesome-icon icon="tachometer-alt" />
                         {{ $t("Go to Dashboard") }}
                     </a>
@@ -298,7 +298,7 @@
                         </VueMultiselect>
                     </div>
                     <div v-else class="text-center">
-                        {{ $t("No monitors available.") }}  <router-link to="/add">{{ $t("Add one") }}</router-link>
+                        {{ $t("No monitors available.") }}  <router-link to="/uptimer/add">{{ $t("Add one") }}</router-link>
                     </div>
                 </div>
             </div>
@@ -693,7 +693,7 @@ export default {
             this.$root.publicGroupList = res.data.publicGroupList;
         }).catch( function (error) {
             if (error.response.status === 404) {
-                location.href = "/page-not-found";
+                location.href = "/uptimer/page-not-found";
             }
             console.log(error);
         });
@@ -725,7 +725,7 @@ export default {
                     data: window.preloadData
                 }));
             } else {
-                return axios.get("/api/status-page/" + this.slug);
+                return axios.get("/uptimer/api/status-page/" + this.slug);
             }
         },
 
@@ -742,7 +742,7 @@ export default {
         updateHeartbeatList() {
             // If editMode, it will use the data from websocket.
             if (! this.editMode) {
-                axios.get("/api/status-page/heartbeat/" + this.slug).then((res) => {
+                axios.get("/uptimer/api/status-page/heartbeat/" + this.slug).then((res) => {
                     const { heartbeatList, uptimeList } = res.data;
 
                     this.$root.heartbeatList = heartbeatList;
@@ -817,7 +817,7 @@ export default {
                     }
 
                     setTimeout(() => {
-                        location.href = "/status/" + this.config.slug;
+                        location.href = "/uptimer/status/" + this.config.slug;
                     }, time);
 
                 } else {
@@ -836,7 +836,7 @@ export default {
             this.$root.getSocket().emit("deleteStatusPage", this.slug, (res) => {
                 if (res.ok) {
                     this.enableEditMode = false;
-                    location.href = "/manage-status-page";
+                    location.href = "/uptimer/manage-status-page";
                 } else {
                     toast.error(res.msg);
                 }
@@ -873,7 +873,7 @@ export default {
 
         /** Discard changes to status page */
         discard() {
-            location.href = "/status/" + this.slug;
+            location.href = "/uptimer/status/" + this.slug;
         },
 
         /**

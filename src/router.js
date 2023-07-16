@@ -41,20 +41,20 @@ const routes = [
         // If it is "/dashboard", the active link is not working
         // If it is "", it overrides the "/" unexpectedly
         // Give a random name to solve the problem.
-        path: "/empty",
+        path: "/uptimer",
         component: Layout,
         children: [
             {
-                path: "",
+                path: "/",
                 component: Dashboard,
                 children: [
                     {
                         name: "DashboardHome",
-                        path: "/dashboard",
+                        path: "/uptimer/dashboard",
                         component: DashboardHome,
                         children: [
                             {
-                                path: "/dashboard/:id",
+                                path: "/uptimer/dashboard/:id",
                                 component: EmptyLayout,
                                 children: [
                                     {
@@ -62,27 +62,27 @@ const routes = [
                                         component: Details,
                                     },
                                     {
-                                        path: "/edit/:id",
+                                        path: "/uptimer/edit/:id",
                                         component: EditMonitor,
                                     },
                                 ],
                             },
                             {
-                                path: "/clone/:id",
+                                path: "/uptimer/clone/:id",
                                 component: EditMonitor,
                             },
                             {
-                                path: "/add",
+                                path: "/uptimer/add",
                                 component: EditMonitor,
                             },
                         ],
                     },
                     {
-                        path: "/list",
+                        path: "/uptimer/list",
                         component: List,
                     },
                     {
-                        path: "/settings",
+                        path: "/uptimer/settings",
                         component: Settings,
                         children: [
                             {
@@ -136,27 +136,27 @@ const routes = [
                         ]
                     },
                     {
-                        path: "/manage-status-page",
+                        path: "/uptimer/manage-status-page",
                         component: ManageStatusPage,
                     },
                     {
-                        path: "/add-status-page",
+                        path: "/uptimer/add-status-page",
                         component: AddStatusPage,
                     },
                     {
-                        path: "/maintenance",
+                        path: "/uptimer/maintenance",
                         component: ManageMaintenance,
                     },
                     {
-                        path: "/maintenance/:id",
+                        path: "/uptimer/maintenance/:id",
                         component: MaintenanceDetails,
                     },
                     {
-                        path: "/add-maintenance",
+                        path: "/uptimer/add-maintenance",
                         component: EditMaintenance,
                     },
                     {
-                        path: "/maintenance/edit/:id",
+                        path: "/uptimer/maintenance/edit/:id",
                         component: EditMaintenance,
                     },
                 ],
@@ -164,23 +164,23 @@ const routes = [
         ],
     },
     {
-        path: "/setup",
+        path: "/uptimer/setup",
         component: Setup,
     },
     {
-        path: "/status-page",
+        path: "/uptimer/status-page",
         component: StatusPage,
     },
     {
-        path: "/status",
+        path: "/uptimer/status",
         component: StatusPage,
     },
     {
-        path: "/status/:slug",
+        path: "/uptimer/status/:slug",
         component: StatusPage,
     },
     {
-        path: "/:pathMatch(.*)*",
+        path: "/uptimer/:pathMatch(.*)*",
         component: NotFound,
     },
 ];

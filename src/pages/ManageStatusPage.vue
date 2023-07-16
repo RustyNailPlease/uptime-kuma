@@ -6,7 +6,7 @@
             </h1>
 
             <div>
-                <router-link to="/add-status-page" class="btn btn-primary mb-3"><font-awesome-icon icon="plus" /> {{ $t("New Status Page") }}</router-link>
+                <router-link to="/uptimer/add-status-page" class="btn btn-primary mb-3"><font-awesome-icon icon="plus" /> {{ $t("New Status Page") }}</router-link>
             </div>
 
             <div class="shadow-box">
@@ -16,11 +16,11 @@
                     </span>
 
                     <!-- use <a> instead of <router-link>, because the heartbeat won't load. -->
-                    <a v-for="statusPage in $root.statusPageList" :key="statusPage.slug" :href="'/status/' + statusPage.slug" class="item">
+                    <a v-for="statusPage in $root.statusPageList" :key="statusPage.slug" :href="'/uptimer/status/' + statusPage.slug" class="item">
                         <img :src="icon(statusPage.icon)" alt class="logo me-2" />
                         <div class="info">
                             <div class="title">{{ statusPage.title }}</div>
-                            <div class="slug">/status/{{ statusPage.slug }}</div>
+                            <div class="slug">/uptimer/status/{{ statusPage.slug }}</div>
                         </div>
                     </a>
                 </template>

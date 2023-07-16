@@ -12,6 +12,7 @@ const viteCompressionFilter = /\.(js|mjs|json|css|html|svg)$/i;
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    base: "/uptimer",
     server: {
         port: 3000,
     },

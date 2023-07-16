@@ -347,7 +347,7 @@ export default {
         },
 
         pushURL() {
-            return this.$root.baseURL + "/api/push/" + this.monitor.pushToken + "?status=up&msg=OK&ping=";
+            return this.$root.baseURL + "/uptimer/api/push/" + this.monitor.pushToken + "?status=up&msg=OK&ping=";
         },
 
         screenshotURL() {
