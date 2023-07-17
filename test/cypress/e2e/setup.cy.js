@@ -5,7 +5,7 @@ const setupPage = require("../support/pages/setup-page");
 
 describe("user can create a new account on setup page", () => {
     before(() => {
-        cy.visit("/setup");
+        cy.visit("/uptimer/setup");
     });
     it("user can create new account", () => {
         cy.url().should("be.equal", setupPage.SetupPage.url);

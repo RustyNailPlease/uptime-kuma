@@ -12,7 +12,7 @@ const viteCompressionFilter = /\.(js|mjs|json|css|html|svg)$/i;
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: "/uptimer",
+    base: "/",
     server: {
         port: 3000,
     },
@@ -48,6 +48,7 @@ export default defineConfig({
         commonjsOptions: {
             include: [ /.js$/ ],
         },
+        assetsDir: "uptimer/assets",
         rollupOptions: {
             output: {
                 manualChunks(id, { getModuleInfo, getModuleIds }) {

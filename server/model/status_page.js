@@ -274,7 +274,7 @@ class StatusPage extends BeanModel {
      */
     getIcon() {
         if (!this.icon) {
-            return "/icon.svg";
+            return "/uptimer/icon.svg";
         } else {
             return this.icon;
         }

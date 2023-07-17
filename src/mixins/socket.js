@@ -108,7 +108,7 @@ export default {
             });
 
             socket.on("setup", (monitorID, data) => {
-                this.$router.push("/setup");
+                this.$router.push("/uptimer/setup");
             });
 
             socket.on("autoLogin", (monitorID, data) => {
